@@ -1,0 +1,2 @@
+DELETE FROM ReturnDetail 
+WHERE ReturnID NOT IN (SELECT ReturnID FROM InvoiceHeader) OR StockID NOT IN (SELECT StockID FROM Stock);

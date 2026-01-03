@@ -1,0 +1,2 @@
+DELETE FROM InvoiceDetail 
+WHERE InvoiceID NOT IN (SELECT InvoiceID FROM InvoiceHeader) OR StockID NOT IN (SELECT StockID FROM Stock);
