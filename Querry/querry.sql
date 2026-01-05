@@ -50,11 +50,11 @@ ORDER BY total_spending DESC
 LIMIT 10;
 
 # Number 5
-SELECT MONTH(i1.InvoiceDate) AS Month_Highest_Spending,  MAX(p.StockPrice * i2.InvoiceQuantity) AS Highest_spending
+SELECT MONTH(i1.InvoiceDate) AS Month_Highest_Spending,  SUM(p.StockPrice * i2.InvoiceQuantity) AS Highest_spending
 FROM Stock p
 JOIN InvoiceDetail i2 ON p.StockID = i2.StockID
 JOIN InvoiceHeader i1 ON i1.InvoiceID = i2.InvoiceID
 WHERE YEAR(i1.InvoiceDate) = 2011
-GROUP BY MONTH(i1.InvoiceDate)
+GROUP BY YEAR(i1.InvoiceDate), MONTH(i1.InvoiceDate)
 ORDER BY Highest_spending DESC
 LIMIT 1;
