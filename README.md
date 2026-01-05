@@ -2,7 +2,7 @@
 
 Given file csv, we normalize it from manual system filling excel, into DBMS. 
 
-First, we make a ERD that have been normalized into 3 NF.
+First, we make an ERD that have been normalized into 3 NF.
 
 Second, we filter the data from CSV, which data we can input, and which we can skip. 
 
